@@ -38,7 +38,7 @@
 # How to use
 - Clone the git repo into your machine where you will run terraform scripts.
 ```
-git clone 
+git clone https://github.com/heinhtetwin/nodejs_test_AYA.git
 cd terraform 
 ```
 - Install Terraform in your system and push terraform codes.
@@ -55,7 +55,7 @@ For application server host -> ssh -J ubuntu@<jump_host> ubuntu@<node-app-host> 
 ```
 - SSH into jump_box host and clone the git repo.
 ```
-git clone https://gitlab.com/hhw1998/nodejs_test.git
+git clone https://github.com/heinhtetwin/nodejs_test_AYA.git
 ```
 - You may need to do a few manaual steps in order to run ansible playbooks from your bastion host into node-app host.
 - As ubuntu user from your bastion host,
