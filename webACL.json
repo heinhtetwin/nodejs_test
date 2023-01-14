@@ -1,0 +1,36 @@
+{
+    "Name": "node-web-ACL",
+    "Id": "95efe0a5-7e9d-4f29-aa61-2134eb293649",
+    "ARN": "arn:aws:wafv2:ap-southeast-2:970012241204:regional/webacl/node-web-ACL/95efe0a5-7e9d-4f29-aa61-2134eb293649",
+    "DefaultAction": {
+      "Allow": {}
+    },
+    "Description": "",
+    "Rules": [
+      {
+        "Name": "admin-path-rule",
+        "Priority": 0,
+        "Statement": {
+          "RuleGroupReferenceStatement": {
+            "ARN": "arn:aws:wafv2:ap-southeast-2:970012241204:regional/rulegroup/nodejs-rule-group/479a7e6b-6d05-4206-8a91-528743ecdec4"
+          }
+        },
+        "OverrideAction": {
+          "None": {}
+        },
+        "VisibilityConfig": {
+          "SampledRequestsEnabled": true,
+          "CloudWatchMetricsEnabled": true,
+          "MetricName": "admin-path-rule"
+        }
+      }
+    ],
+    "VisibilityConfig": {
+      "SampledRequestsEnabled": true,
+      "CloudWatchMetricsEnabled": true,
+      "MetricName": "node-web-ACL"
+    },
+    "Capacity": 100,
+    "ManagedByFirewallManager": false,
+    "LabelNamespace": "awswaf:970012241204:webacl:node-web-ACL:"
+  }

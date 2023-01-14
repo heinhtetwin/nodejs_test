@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  web:
+    build: .
+    environment:
+      NODE_ENV: Testing
+    ports:
+      - "2019:2019"
+    command: npm start
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    links:
+      - web

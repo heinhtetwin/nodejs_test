@@ -1,0 +1,11 @@
+[Unit]
+Description=NodeJS APP
+
+[Service]
+User=ubuntu
+ExecStart=/usr/local/bin/docker-compose -f /home/ubuntu/nodejs_test/src/docker-compose.yml up
+ExecStop=/usr/local/bin/docker-compose -f /home/ubuntu/nodejs_test/src/docker-compose.yml down
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

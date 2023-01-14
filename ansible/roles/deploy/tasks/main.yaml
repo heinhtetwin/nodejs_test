@@ -1,0 +1,23 @@
+- name: add ubuntu user into docker group
+  user:
+    name: ubuntu 
+    append: yes
+    groups: docker
+
+- name: copy service file
+  copy:
+    src: files/nodejs-container.service
+    dest: /etc/systemd/system/nodejs-container.service
+
+- name: clone the git repo
+  git:
+    repo: https://gitlab.com/hhw1998/nodejs_test.git
+    dest: /home/ubuntu/nodejs_test
+    update: yes
+
+- name: Start and enable container service
+  systemd:
+    name: nodejs-container
+    state: started
+    enabled: yes
+    daemon_reload: yes

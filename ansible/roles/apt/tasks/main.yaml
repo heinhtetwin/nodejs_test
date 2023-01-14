@@ -1,0 +1,13 @@
+---
+- name: Update cache
+  apt:
+    update_cache: yes
+  when: apt.update
+  become: true
+
+- name: Upgrade packages to latest
+  apt:
+    upgrade: dist
+  when: apt.upgrade
+  become: true
+  ignore_errors: yes
